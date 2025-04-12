@@ -481,9 +481,10 @@ def render_rolling_stats(latest_rolling: pd.Series, rolling_window: int) -> None
         ]
     )
 
-    st.dataframe(
-        renamed_series.to_frame(name="Latest Value (%)"), use_container_width=True
-    )
+    rolling_df = renamed_series.to_frame(name="Latest Value (%)")
+    rolling_df.index.name = "Metric"
+
+    st.dataframe(rolling_df, use_container_width=True)
 
 
 def render_trading_report(stats: dict, ticker: str) -> None:
