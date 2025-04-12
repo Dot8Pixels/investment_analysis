@@ -15,9 +15,6 @@ def main() -> None:
     # Header Section
     render_header()
 
-    # Divider
-    st.subheader("", divider="rainbow")
-
     # Display available pages section
     render_available_pages()
 
@@ -33,22 +30,19 @@ def render_header() -> None:
     """Renders the application header and introduction text"""
     # Title with emoji for visual appeal
     st.title("📊 Investment Analysis Hub")
-    st.subheader("Unlock Insights. Make Smarter Investment Decisions.")
-
-    # st.markdown("""
-    # Available data sources provided by Yahoo Finance: https://finance.yahoo.com/lookup/
-    # """)
+    st.subheader(
+        "Unlock Insights. Make Smarter Investment Decisions.", divider="rainbow"
+    )
 
     # Introduction text
     st.markdown("""
-    Welcome to the **Investment Analysis Hub** – your central place to explore
-    investment data, monitor market trends, and gain financial insights.
+    ##### Welcome to the **Investment Analysis Hub** – your central place to explore investment data, monitor market trends, and gain financial insights.
     """)
 
 
 def render_available_pages() -> None:
     """Scans for and displays available pages in the application"""
-    st.markdown("## 📄 Available Sections (visible in sidebar):")
+    st.markdown("##### 📄 Available Sections (visible in sidebar):")
 
     # Use Path for more reliable cross-platform path handling
     pages_dir = Path("pages")
